@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>dvue</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="message">{{ message }}
+    <br>
+    <br>
+    <input type="text" v-model="info.a.b">
+    <div>{{ info.a.b }}</div>
+</div>
+<script src="util.js"></script>
+<script src="dep.js"></script>
+<script src="watcher.js"></script>
+<script src="observe.js"></script>
+<script src="compile.js"></script>
+<script src="dvue.js"></script>
+<script>
+    let data = {
+            message:'Hello I am Yimi',
+            info:{
+                a:{b:'How are you'}
+            }
+        };
+    let vm = new Dvue({
+        el:'#app',
+        data:data
+    });
+    data.message = '123'
+    
+</script>
+
+</body>
+</html>
